@@ -16,7 +16,7 @@ function AppSignup({email,password,name}){
     await account.createEmailSession(email, password);
     navigate('/login')
     }catch(e){
-        console.log(e);
+        alert(e.message);
     }
     }
 
@@ -24,7 +24,7 @@ function AppSignup({email,password,name}){
     return (
         <>
         <div>
-            <button onClick={(e)=>{use(e)} }>signup</button>
+            <button onClick={(e)=>{use(e)} } className='btn circular'>signup</button>
         </div>
         </>
     )

@@ -43,7 +43,7 @@ function AppSignup(_ref) {
           case 12:
             _context.prev = 12;
             _context.t0 = _context["catch"](2);
-            console.log(_context.t0);
+            alert(_context.t0.message);
           case 15:
           case "end":
             return _context.stop();
@@ -55,7 +55,8 @@ function AppSignup(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("button", {
     onClick: function onClick(e) {
       use(e);
-    }
+    },
+    className: "btn circular"
   }, "signup")));
 }
 var _default = AppSignup;

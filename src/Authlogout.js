@@ -16,7 +16,7 @@ function Authlogout({email,password}){
     return (
         <>
         <div>
-            <button onClick={(e)=>{Logout(e)}}>Logout</button>
+            <button onClick={(e)=>{Logout(e)}} className='btn circular'>Logout</button>
         </div>
         </>
     )

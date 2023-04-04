@@ -12,7 +12,7 @@ function oAuthGoogle({sucesspath,failpath}){
     return (
         <>
         <div>
-            <button onClick={(e)=>{LoginGoogle(e)}}>Google</button>
+            <button onClick={(e)=>{LoginGoogle(e)}} className='btn circular'>Google</button>
         </div>
         </>
     )

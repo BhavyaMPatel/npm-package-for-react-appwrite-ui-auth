@@ -12,7 +12,7 @@ function Authlogin({email,password}){
     await account.createEmailSession(email, password);
     navigate('/home')
     }catch(e){
-        console.log(e);
+        alert(e.message);
     }
     }
 
@@ -20,7 +20,7 @@ function Authlogin({email,password}){
     return (
         <>
         <div>
-            <button onClick={(e)=>{Login(e)}}>Login</button>
+            <button onClick={(e)=>{Login(e)}} className='btn circular'>Login</button>
         </div>
         </>
     )

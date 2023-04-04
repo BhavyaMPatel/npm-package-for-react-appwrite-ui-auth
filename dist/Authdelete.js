@@ -40,7 +40,8 @@ function Authdelete(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("button", {
     onClick: function onClick(e) {
       Delete(e);
-    }
+    },
+    className: "btn circular"
   }, "DeleteUser")));
 }
 var _default = Authdelete;

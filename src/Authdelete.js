@@ -15,7 +15,7 @@ function Authdelete({email,password}){
     return (
         <>
         <div>
-            <button onClick={(e)=>{Delete(e)}}>DeleteUser</button>
+            <button onClick={(e)=>{Delete(e)}} className='btn circular'>DeleteUser</button>
         </div>
         </>
     )

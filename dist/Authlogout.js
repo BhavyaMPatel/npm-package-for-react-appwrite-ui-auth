@@ -40,7 +40,8 @@ function Authlogout(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("button", {
     onClick: function onClick(e) {
       Logout(e);
-    }
+    },
+    className: "btn circular"
   }, "Logout")));
 }
 var _default = Authlogout;
