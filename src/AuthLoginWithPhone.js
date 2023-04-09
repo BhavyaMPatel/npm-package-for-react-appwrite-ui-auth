@@ -2,27 +2,28 @@ import React from 'react';
 import account from '../../src/services/appwriteConfig';
 import {useNavigate} from 'react-router-dom';
 
-function AuthLogin({Authstyle,Redirectpath,email,password}){
+function AuthLoginWithPhone({Authstyle,Redirectpath,UserId,Phoneno}){
     
     const navigate = useNavigate();
-    async function Login(e){
+    async function LoginWithPhone(e){
     e.preventDefault();
     try{
-    await account.createEmailSession(email, password);
+    await account.createPhoneSession(UserId,Phoneno);
     navigate(Redirectpath)
     }catch(e){
     alert(e.message);
     }
     }
 
+
     return (
         <>
         <div>
-        <button onClick={(e)=>{Login(e)}} className='button' style={Authstyle}>Login</button>
+        <button onClick={(e)=>{LoginWithPhone(e)}} className='button' style={Authstyle}>Login With Phone</button>
         </div>
         </>
     )
 
 }
 
-export default AuthLogin;
+export default AuthLoginWithPhone;

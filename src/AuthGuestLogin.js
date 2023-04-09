@@ -2,27 +2,28 @@ import React from 'react';
 import account from '../../src/services/appwriteConfig';
 import {useNavigate} from 'react-router-dom';
 
-function AuthLogin({Authstyle,Redirectpath,email,password}){
+function AuthGuestLogin({Authstyle,Redirectpath}){
     
     const navigate = useNavigate();
-    async function Login(e){
+    async function GuestLogin(e){
     e.preventDefault();
     try{
-    await account.createEmailSession(email, password);
+    await account.createAnonymousSession();
     navigate(Redirectpath)
     }catch(e){
     alert(e.message);
     }
     }
 
+
     return (
         <>
         <div>
-        <button onClick={(e)=>{Login(e)}} className='button' style={Authstyle}>Login</button>
+        <button onClick={(e)=>{GuestLogin(e)}} className='button' style={Authstyle}>Guest Login</button>
         </div>
         </>
     )
 
 }
 
-export default AuthLogin;
+export default AuthGuestLogin;

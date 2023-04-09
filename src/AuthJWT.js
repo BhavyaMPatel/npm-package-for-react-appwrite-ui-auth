@@ -2,23 +2,28 @@ import React from 'react';
 import account from '../../src/services/appwriteConfig';
 import {useNavigate} from 'react-router-dom';
 
-function Authdelete({Authstyle,Redirectpath}){
+function AuthLogin({Authstyle,Redirectpath}){
     
     const navigate = useNavigate();
-    async function Delete(e){
+    async function Login(e){
     e.preventDefault();
-    account.delete();
+    try{
+    await account.createJWT();
     navigate(Redirectpath)
+    }catch(e){
+    alert(e.message);
     }
+    }
+
 
     return (
         <>
         <div>
-            <button onClick={(e)=>{Delete(e)}} className='button' style={Authstyle}>DeleteUser</button>
+        <button onClick={(e)=>{Login(e)}} className='button' style={Authstyle}>Create JWT</button>
         </div>
         </>
     )
 
 }
 
-export default Authdelete;
+export default AuthLogin;

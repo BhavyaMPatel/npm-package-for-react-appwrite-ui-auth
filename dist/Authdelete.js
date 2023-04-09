@@ -13,8 +13,8 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 function Authdelete(_ref) {
-  var email = _ref.email,
-    password = _ref.password;
+  var Authstyle = _ref.Authstyle,
+    Redirectpath = _ref.Redirectpath;
   var navigate = (0, _reactRouterDom.useNavigate)();
   function Delete(_x) {
     return _Delete.apply(this, arguments);
@@ -25,11 +25,9 @@ function Authdelete(_ref) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             e.preventDefault();
-            _context.next = 3;
-            return _appwriteConfig["default"].deleteSessions();
+            _appwriteConfig["default"]["delete"]();
+            navigate(Redirectpath);
           case 3:
-            navigate('/');
-          case 4:
           case "end":
             return _context.stop();
         }
@@ -41,7 +39,8 @@ function Authdelete(_ref) {
     onClick: function onClick(e) {
       Delete(e);
     },
-    className: "btn circular"
+    className: "button",
+    style: Authstyle
   }, "DeleteUser")));
 }
 var _default = Authdelete;

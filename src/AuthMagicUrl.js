@@ -2,27 +2,28 @@ import React from 'react';
 import account from '../../src/services/appwriteConfig';
 import {useNavigate} from 'react-router-dom';
 
-function AuthLogin({Authstyle,Redirectpath,email,password}){
+function AuthMagicUrl({Authstyle,Redirectpath,UserId,Email}){
     
     const navigate = useNavigate();
-    async function Login(e){
+    async function LoginWithMagicUrl(e){
     e.preventDefault();
     try{
-    await account.createEmailSession(email, password);
+    await account.createMagicURLSession(UserId,Email);
     navigate(Redirectpath)
     }catch(e){
     alert(e.message);
     }
     }
 
+
     return (
         <>
         <div>
-        <button onClick={(e)=>{Login(e)}} className='button' style={Authstyle}>Login</button>
+        <button onClick={(e)=>{LoginWithMagicUrl(e)}} className='button' style={Authstyle}>Get Magic</button>
         </div>
         </>
     )
 
 }
 
-export default AuthLogin;
+export default AuthMagicUrl;
