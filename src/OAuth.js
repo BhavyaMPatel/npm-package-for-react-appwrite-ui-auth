@@ -1,11 +1,11 @@
 import React from 'react';
-import account from '../../src/services/appwriteConfig';
+import account from '../../services/appwriteConfig';
 
-function oAuthGoogle({Authstyle,provider,sucesspath,failpath}){
+function oAuthGoogle({Authstyle,Provider,Sucesspath,Failpath}){
     
     async function LoginGoogle(e){
     e.preventDefault();
-    account.createOAuth2Session(provider,sucesspath,failpath);
+    account.createOAuth2Session(Provider,Sucesspath,Failpath);
     }
 
 

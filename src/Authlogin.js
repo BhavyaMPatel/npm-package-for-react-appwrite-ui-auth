@@ -1,14 +1,14 @@
 import React from 'react';
-import account from '../../src/services/appwriteConfig';
+import account from '../../services/appwriteConfig';
 import {useNavigate} from 'react-router-dom';
 
-function AuthLogin({Authstyle,Redirectpath,email,password}){
+function AuthLogin({Authstyle,Redirectpath,Email,Password}){
     
     const navigate = useNavigate();
     async function Login(e){
     e.preventDefault();
     try{
-    await account.createEmailSession(email, password);
+    await account.createEmailSession(Email, Password);
     navigate(Redirectpath)
     }catch(e){
     alert(e.message);
