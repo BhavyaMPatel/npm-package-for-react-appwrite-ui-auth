@@ -30,7 +30,15 @@ make PR to add your component or if you want to update some component
 ```
 make your react app 
 setup for appwrite config file
-inside your src folder make appwriteConfig.js file 
+inproject folder folder make appwriteConfig.js file 
+your project folder directory should look like this
+project
+|-node_modules
+|-public
+|-src
+|-services
+ |-appwriteConfig.js
+ other files
 ```
 ```
 initially appwriteConfig.js contain this info
