@@ -1,11 +1,11 @@
 import React from 'react';
-import account from '../../src/services/appwriteConfig';
+import account from '../../services/appwriteConfig';
 import {useNavigate} from 'react-router-dom';
 
-function AuthVerifyPhone({Authstyle,Redirectpath,UserId,Secret}){
+function AuthVerifyMagicUrl({Authstyle,Redirectpath,UserId,Secret}){
     
     const navigate = useNavigate();
-    async function VerifyPhone(e){
+    async function VerifyURL(e){
     e.preventDefault();
     try{
     await account.updateMagicURLSession(UserId,Secret);
@@ -19,11 +19,11 @@ function AuthVerifyPhone({Authstyle,Redirectpath,UserId,Secret}){
     return (
         <>
         <div>
-        <button onClick={(e)=>{VerifyPhone(e)}} className='button' style={Authstyle}>Verify MagicUrl</button>
+        <button onClick={(e)=>{VerifyURL(e)}} className='button' style={Authstyle}>Verify MagicUrl</button>
         </div>
         </>
     )
 
 }
 
-export default AuthVerifyPhone;
+export default AuthVerifyMagicUrl;

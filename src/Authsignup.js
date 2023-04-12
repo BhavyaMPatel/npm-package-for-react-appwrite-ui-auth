@@ -1,16 +1,16 @@
 import React from 'react';
-import account from '../../src/services/appwriteConfig';
+import account from '../../services/appwriteConfig';
 import {useNavigate} from 'react-router-dom';
 
-function AuthSignup({email,password,name,Authstyle,Redirectpath}){
+function AuthSignup({Email,Password,Name,Authstyle,Redirectpath}){
     
     const navigate = useNavigate();
     async function Authsignup(e){
     e.preventDefault();
-    const userId=name+email[0]+email[1];
+    const userId=Name+Email[0];
     try{
-    await account.create(userId,email,password,name);
-    await account.createEmailSession(email, password);
+    await account.create(userId,Email,Password,Name);
+    await account.createEmailSession(Email, Password);
     navigate(Redirectpath)
     }catch(e){
         alert(e.message);

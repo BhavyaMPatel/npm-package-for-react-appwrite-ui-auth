@@ -1,5 +1,5 @@
 import React from 'react';
-import account from '../../src/services/appwriteConfig';
+import account from '../../services/appwriteConfig';
 import {useNavigate} from 'react-router-dom';
 
 function AuthLogout({Authstyle,Redirectpath}){
